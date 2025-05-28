@@ -31,6 +31,10 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    /* timeleaf starter, layout */
+    implementation("org.springframework.boot:spring-boot-starter-thymeleaf:3.5.0")
+    implementation("nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.4.0")
 }
 
 tasks.named('test') {
