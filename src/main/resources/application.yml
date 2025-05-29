@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: SecurityProj
+  thymeleaf:
+    cache: false
+
+server:
+  port: 8080
