@@ -1,4 +1,4 @@
-package com.made.securityproj.controller;
+package com.made.securityproj.controller.co;
 
 
 import org.springframework.stereotype.Controller;
@@ -15,6 +15,16 @@ public class COMainController {
             throw new Exception(e.getMessage());
         }
         return "pages/index";
+    }
+
+    @GetMapping(value = "/login")
+    public String getLoginPage() throws Exception {
+        try {
+
+        } catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
+        return "pages/co/COLogin";
     }
 
 }
