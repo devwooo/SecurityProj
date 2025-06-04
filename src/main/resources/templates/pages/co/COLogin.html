@@ -18,7 +18,7 @@
     <!-- Outer Row -->
     <div class="row justify-content-center">
         <div class="col-xl-10 col-lg-12 col-md-9">
-            <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card o-hidden border-0 shadow-lg lgnMain">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-12">
@@ -28,10 +28,10 @@
                                 </div>
                                 <form id="loginFrm" class="user" method="POST" action="">
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" name="id" placeholder="아이디를 입력하세요." required>
+                                        <input type="text" class="form-control form-control-user idChk" name="id" placeholder="아이디를 입력하세요." title="아이디">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user" name="pwd" placeholder="패스워드를 입력하세요." required>
+                                        <input type="password" class="form-control form-control-user pwdChk" name="pwd" placeholder="패스워드를 입력하세요." title="비밀번호" required>
                                     </div>
                                     <div class="form-group">
                                         <div class="custom-control custom-checkbox small">
@@ -45,9 +45,6 @@
                                     <hr>
                                     <a href="index.html" class="btn btn-google btn-user btn-block">
                                         <i class="fab fa-google fa-fw"></i> Login with Google
-                                    </a>
-                                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                        <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                     </a>
                                 </form>
                                 <hr>
@@ -78,5 +75,19 @@
 <script src="/common/js/co/COCmmCtrl.js"></script>
 <script src="/common/js/co/COLoginCtrl.js"></script>
 </body>
+
+<style>
+    @media (max-height: 950px) {
+        .lgnMain {
+            margin-top: 25%;
+        }
+    }
+
+    @media (min-height: 951px) {
+        .lgnMain {
+            margin-top: 40%;
+        }
+    }
+</style>
 
 </html>

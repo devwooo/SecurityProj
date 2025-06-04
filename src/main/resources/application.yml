@@ -1,8 +1,12 @@
 spring:
   application:
     name: SecurityProj
+  profiles:
+    include: db
   thymeleaf:
     cache: false
 
+---
+spring.config.activate.on-profile: local
 server:
   port: 8080

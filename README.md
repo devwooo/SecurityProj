@@ -12,3 +12,6 @@ Project 생성 과정
 8. COErrController 컨트롤러 생성 후 400 등 에러페이지 맵핑
 9. addResourceHandlers 에 common 경로 설정
 10. js 파일 생성 후 초기화
+
+11. 로그인화면 설정
+12. db 설정 파일(log4jdbc, mybatis 의존성 추가) 생성 및 activate 구분

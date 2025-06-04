@@ -1,0 +1,15 @@
+#MybatisConfig.java에서 사용할 설정
+mybatis:
+
+
+---
+spring.config.activate.on-profile: local
+spring:
+  datasource:
+    #Db 접속 정보
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:mysql://localhost:3306/secudb?serverTimezone=UTC&useUnicode=true&charcterEncoding=utf8&useSSL=false
+    username: 
+    password:
+    #Db jndi 명
+    jndi-name:
