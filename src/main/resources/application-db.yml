@@ -1,15 +1,20 @@
-#MybatisConfig.java에서 사용할 설정
 mybatis:
-
+  config-location:  classpath:mybatis-config.xml #설정 파일의 위치 # mybatis-config.xml
+  mapper-locations: classpath:mapper/**/*.xml # ~~Mapper.xml 파일의 위치
+  # classpath*: ~~   >> mapper 폴더가 있는 모든 클래스패스 경로에서 .xml 파일을 모두 찾음 관심사 분리하여 프로젝트를 관리할 경우
+  type-aliases-package: com.made.securityproj.model.dto # DTO 파일의 위치
 
 ---
 spring.config.activate.on-profile: local
 spring:
   datasource:
-    #Db 접속 정보
-    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-    url: jdbc:log4jdbc:mysql://localhost:3306/secudb?serverTimezone=UTC&useUnicode=true&charcterEncoding=utf8&useSSL=false
-    username: 
-    password:
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy #Db 접속 정보
+    jdbc-url: jdbc:log4jdbc:mysql://localhost:3306/secudb?serverTimezone=UTC&useUnicode=true&charcterEncoding=utf8&useSSL=false
+    username: root
+    password: admin
     #Db jndi 명
     jndi-name:
+
+    #log안 쓰는 경우
+    #driver=com.mysql.cj.jdbc.Driver
+    #url=jdbc:mysql://localhost:3306/secudb?serverTimezone=UTC&useUnicode=true&charcterEncoding=utf8&useSSL=false

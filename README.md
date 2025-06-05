@@ -15,3 +15,8 @@ Project 생성 과정
 
 11. 로그인화면 설정
 12. db 설정 파일(log4jdbc, mybatis 의존성 추가) 생성 및 activate 구분
+ > application-db.yml
+> > mybatis-config.xml
+> > log4jdbc.log4j2.properties
+> > Mybatis.java
+> > // DTO // mapper 등 

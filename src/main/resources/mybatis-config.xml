@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+    <!-- 1. 전역설정 -->
+    <settings>
+        <setting name="cacheEnabled" value="true"/>                     <!-- 2차 캐시 사용 -->
+        <setting name="lazyLoadingEnabled" value="false"/>              <!-- 지연 로딩은 ORM처럼 관계형 객체 참조할 때 의미 있음 -->
+        <setting name="callSettersOnNulls" value="true"/>               <!-- null이어도 필드 초기화를 강제하려면 true -->
+        <setting name="multipleResultSetsEnabled" value="true"/>        <!-- 하나의 쿼리에서 여러 ResuiltSet 처리 / 저장 프로시저에서 여러 결과 반환	true (필수)-->
+        <setting name="useColumnLabel" value="true"/>               <!-- 쿼리 결과의 컬럼 라벨 사용  (AS) -->
+        <setting name="useGeneratedKeys" value="false"/>            <!--  MyBatis가 INSERT 시 DB에서 자동 생성되는 키(예: Auto Increment, Sequence)를 Java 객체에 자동으로 주입할 수 있게 해주는 설정입니다. -->
+        <!-- 쿼리에서 사용 <insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id"> -->
+        <setting name="defaultStatementTimeout" value="60000"/>     <!-- 타입아웃 시간 설정 -->
+        <setting name="jdbcTypeForNull" value="VARCHAR"/>           <!-- null 인경우 어떤 JDBC 타입으로 넘길지 지정-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>     <!-- DB user_id > java userId 자동 맵핑 -->
+        <setting name="defaultExecutorType" value="SIMPLE"/>        <!-- SQL실행 방식 선택 SIMPLE, REUSE, BATCH --><!-- SIMPLE: 기본, 매 쿼리마다 PreparedStatement 새로 생성 / REUSE: 동일 쿼리 재사용 / BATCH: 대량 insert/update 시 유리 (단, commit 주의) -->
+    </settings>
+
+    <!-- 2 타입 별칭 -->
+    <typeAliases>
+
+    </typeAliases>
+
+    <!-- 3. 커스텀 타입 핸들러 -->
+    <typeHandlers>
+        <typeHandler javaType="java.sql.Timestamp" handler="org.apache.ibatis.type.StringTypeHandler"/>
+        <typeHandler javaType="java.sql.Time" handler="org.apache.ibatis.type.StringTypeHandler"/>
+        <typeHandler javaType="java.sql.Date" handler="org.apache.ibatis.type.StringTypeHandler"/>
+        <typeHandler javaType="java.util.Date" handler="org.apache.ibatis.type.StringTypeHandler"/>
+        <typeHandler javaType="java.time.LocalDateTime" handler="org.apache.ibatis.type.StringTypeHandler"/>
+        <typeHandler javaType="java.lang.String" handler="org.apache.ibatis.type.ClobTypeHandler" jdbcType="CLOB"/>
+    </typeHandlers>
+
+</configuration>
